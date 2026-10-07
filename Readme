@@ -1,1 +1,18 @@
+End-to-End Supply Chain Analytics & Vendor Rationalization
 
+Executive Summary
+This project is an integrated data pipeline and strategic reporting tool designed to optimize inventory management and execute vendor rationalization. By processing raw distribution data through SQL, modeling financial baselines in Excel, and deploying a dynamic Power BI dashboard, this solution identifies underperforming "Tier 3" suppliers. The final output enables procurement teams to delist stagnant vendors, capturing a projected administrative savings of $1,500 per account.
+
+Tech Stack & Workflow
+SQL (Data Engineering): Consolidated raw inventory and distribution logs. Engineered core operational metrics (e.g., Sell_Through_Pct) directly within SQL views (vw_item_inventory_flow) to optimize downstream compute performance.
+Microsoft Excel (Financial Modeling & Prototyping): Established the foundational business logic, defined the $1,500 administrative cost baseline per vendor, and prototyped the mathematical logic for the vendor tiering system before scaling.
+
+Power BI (Analytics & Visualization):
+Data Modeling: Engineered a Star Schema with a centralized Dim_Supplier lookup table to resolve many-to-many cardinality.
+DAX: Used RANKX, TOPN, and MEDIANX to calculate dynamic Pareto curves and shifting matrix thresholds.
+Predictive AI: Deployed native time-series forecasting to project 6-month seasonal demand curves.
+
+Strategic Dashboard Capabilities
+Vendor Pareto Analysis (80/20): Isolates high-impact "Tier 1" suppliers for strategic contract negotiations.
+Demand Seasonality: Overlays warehouse replenishment rates against actual retail sales to flag stockout risks and forecast seasonal purchasing windows.
+Rationalization Matrix: A 4-quadrant scatter plot mapping volume against inventory velocity. Dynamically isolates "Dead Weight" vendors into an actionable hit-list for immediate delisting and cost recovery.
